@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //connect database
-var connectionString = builder.Configuration.GetConnectionString("DeafultConnection") ?? throw new InvalidOperationException;
+var connectionString = builder.Configuration.GetConnectionString("DeafultConnection") ?? throw new InvalidOperationException();
 builder.Services.AddDbContext<TodoContext>(options => options.UseSqlServer(connectionString));
 
 var app = builder.Build();
