@@ -14,7 +14,10 @@ namespace TodoList.Data
         {
             if (todo == null) 
                 throw new ArgumentNullException(nameof(todo));
+
             await _context.Todos.AddAsync(todo);
+            _context.SaveChanges();
+            
         }
 
         public Task DeleteTodo(Todo todo)
